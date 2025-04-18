@@ -1,5 +1,3 @@
-# WeatherTrackingSystem-assignment10
-
 # 🧩 Assignment 10: From Class Diagrams to Code – Weather Tracking System
 
 This assignment implements the class structure and six creational design patterns for the Weather Tracking System, based on the UML diagram and domain model created in Assignment 9.
@@ -25,9 +23,22 @@ All six creational patterns are implemented in `/creational_patterns/`:
 | Prototype         | `prototype_pattern.rs`    | `ReportTemplateCache` for cloning reports                 |
 | Singleton         | `singleton_pattern.rs`    | `Config` for a shared global DB/config instance           |
 
-### 🧪 Unit Tests
-- All patterns are tested in `tests/tests_creational_patterns.rs`
-- Coverage includes behavior validation, object consistency, and pattern correctness
+### 🧪 Unit Testing (20 Marks)
+- Located in `tests/tests_creational_patterns.rs`
+- Each design pattern is covered with:
+  - Validation of core behaviors and expected outputs
+  - Pattern-specific logic (e.g., Singleton instance sync, Builder chaining)
+  - Cloning verification and report data construction
+- Tests are written using Rust's `#[test]` macro
+
+🧪 Example:
+```rust
+#[test]
+fn test_simple_factory_sensor_creation() {
+    let sensor = SensorFactory::create_sensor(SensorType::Temperature);
+    assert_eq!(sensor.sensor_type, "Temperature");
+}
+```
 
 ### 🧾 CHANGELOG
 - `CHANGELOG.md` tracks commit-style pattern additions and class development
@@ -61,4 +72,5 @@ All six creational patterns are implemented in `/creational_patterns/`:
 ├── CHANGELOG.md
 └── README_assignment10.md
 ```
+
 
